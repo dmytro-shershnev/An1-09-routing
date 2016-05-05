@@ -6,7 +6,7 @@
 
 	taskList.$inject = ["tasksSrv"];
 	
-	function taskList($scope, tasksSrv) {
+	function taskList(tasksSrv) {
 		var vm = this;
 		
 		vm.tasks = tasksSrv.getAllTasks();
