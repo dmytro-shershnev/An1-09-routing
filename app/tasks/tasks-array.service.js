@@ -16,11 +16,11 @@
 			];
 
 		return {
-			getAllTasks: getAllTasks,
-			getTask: getTask,
-			getUserTasks: getUserTasks,
-			add: add,
-			update: update
+			getAllTasks,
+			getTask,
+			getUserTasks,
+			add,
+			updates
 		};
 
 		function getAllTasks() {

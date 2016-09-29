@@ -8,7 +8,7 @@
 
 	function usersSrv($http, $q) {
 		return {
-			getData: getData
+			getData
 		};
 
 		function getData() {
@@ -16,8 +16,8 @@
 
 			$http
 				.get("./data/users.json")
-				.success(onSuccess)
-				.error(onError);
+				.then(onSuccess)
+				.catch(onError);
 
 			function onSuccess(data) {
 				dfd.resolve(data);
