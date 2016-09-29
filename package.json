@@ -1,9 +1,12 @@
 {
-  "name": "AngularJS",
+  "name": "angularjs-routing",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
+    "prestart": "npm install",
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

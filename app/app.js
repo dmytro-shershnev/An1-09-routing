@@ -6,6 +6,10 @@
 		"tasks",
 		"users",
 		"userTasks"
-	])
+	]);
+
+	angular.element(document).ready(() => {
+		angular.bootstrap(document, ["app"]);
+	});
 
 })();
