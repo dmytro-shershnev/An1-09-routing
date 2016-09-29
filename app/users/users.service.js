@@ -12,22 +12,19 @@
 		};
 
 		function getData() {
-			var dfd = $q.defer();
-
-			$http
-				.get("./data/users.json")
+			return $http
+				.get("./data/users.json1")
 				.then(onSuccess)
 				.catch(onError);
 
-			function onSuccess(data) {
-				dfd.resolve(data);
+			function onSuccess(response) {
+				return response.data;
 			}
 
 			function onError(response) {
-				dfd.reject(response);
+				return $q.reject(response.data);
 			}
 
-			return dfd.promise;
 		}
 	}
 
