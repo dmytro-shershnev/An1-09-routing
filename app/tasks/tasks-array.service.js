@@ -20,7 +20,7 @@
 			getTask,
 			getUserTasks,
 			add,
-			updates
+			update
 		};
 
 		function getAllTasks() {
