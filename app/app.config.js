@@ -10,7 +10,13 @@
             .when('/', {
                 templateUrl: 'tasks/task-list.html',
                 controller: 'TaskList',
-                controllerAs: '$ctrl'
+                controllerAs: '$ctrl',
+                resolve: {
+                    data: function(tasksSrv) {
+                        return tasksSrv.getAllTasks();
+                    }
+                },
+                nav: 1
             })
             .when('/addTask', {
                 templateUrl: 'tasks/add-task.html',
@@ -20,7 +26,8 @@
             .when('/users', {
                 templateUrl: 'users/user-list.html',
                 controller: 'UserList',
-                controllerAs: '$ctrl'
+                controllerAs: '$ctrl',
+                nav: 2
             })
             .when('/addUser', {
                 templateUrl: 'users/add-user-general.html',

@@ -4,12 +4,14 @@
 		.module("tasks")
 		.controller("TaskList", TaskList);
 
-	TaskList.$inject = ["tasksSrv"];
+	TaskList.$inject = ['$route', 'tasksSrv', 'data'];
 	
-	function TaskList(tasksSrv) {
+	function TaskList($route, tasksSrv, data) {
 		var $ctrl = this;
 		
-		$ctrl.tasks = tasksSrv.getAllTasks();
+		// $ctrl.tasks = data;
+		$ctrl.tasks = $route.current.locals.data;
+		// $ctrl.tasks = tasksSrv.getAllTasks();
 	}
 
 })();
