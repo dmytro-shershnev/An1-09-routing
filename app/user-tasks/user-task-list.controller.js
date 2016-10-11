@@ -4,10 +4,13 @@
 		.module("userTasks")
 		.controller("UserTaskList", UserTaskList);
 
-	UserTaskList.$inject = ["tasksSrv"];
+	UserTaskList.$inject = ['$routeParams', 'tasksSrv'];
 	
-	function UserTaskList(tasksSrv) {
-		
+	function UserTaskList($routeParams, tasksSrv) {
+        let $ctrl = this;
+
+        $ctrl.tasks = tasksSrv.getUserTasks($routeParams['userId']);
+        console.log($routeParams['userId']);
 	}
 
 })();

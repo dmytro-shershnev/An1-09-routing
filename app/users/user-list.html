@@ -10,7 +10,7 @@
 	</tr>
 	<tr ng-repeat="item in $ctrl.users">
 		<td>{{item.id}}</td>
-		<td><a>{{item.name}}</a></td>
+		<td><a ng-href="#/userTasks/{{item.id}}">{{item.name}}</a></td>
 		<td>{{item.location}}</td>
 	</tr>
 </table>

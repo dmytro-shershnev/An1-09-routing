@@ -13,7 +13,7 @@
 
 		function getData() {
 			return $http
-				.get("./data/users.json1")
+				.get("./data/users.json")
 				.then(onSuccess)
 				.catch(onError);
 
