@@ -1,8 +1,8 @@
 (function() {
 
 	angular
-		.module("tasks")
-		.controller("TaskList", TaskList);
+		.module('tasks')
+		.controller('TaskList', TaskList);
 
 	TaskList.$inject = ['$route', 'tasksSrv', 'data'];
 	
