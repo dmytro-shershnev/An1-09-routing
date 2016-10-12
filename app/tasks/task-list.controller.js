@@ -12,6 +12,11 @@
 		// $ctrl.tasks = data;
 		$ctrl.tasks = $route.current.locals.data;
 		// $ctrl.tasks = tasksSrv.getAllTasks();
+
+		$ctrl.refreshTaskList = function() {
+			console.log('refresh');
+			$route.reload();
+		};
 	}
 
 })();

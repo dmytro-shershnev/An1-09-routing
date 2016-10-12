@@ -59,7 +59,15 @@
         // $locationProvider.html5Mode(false);
 	}
 
-	function runApp() {
+	function runApp($rootScope, $route) {
+        $rootScope.$on('$routeChangeStart', function(event, next, current) {
+            console.log(arguments);
+        });
+
+        $rootScope.$on('$routeChangeSuccess', function(event, next, current) {
+            console.log(arguments);
+            console.log($route.current.nav);
+        });
 	}
 	
 })();
