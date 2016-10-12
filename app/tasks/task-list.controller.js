@@ -4,9 +4,9 @@
 		.module('tasks')
 		.controller('TaskList', TaskList);
 
-	TaskList.$inject = ['$route', 'tasksSrv', 'data'];
+	TaskList.$inject = ['$route', '$location', 'tasksSrv', 'data'];
 	
-	function TaskList($route, tasksSrv, data) {
+	function TaskList($route, $location, tasksSrv, data) {
 		var $ctrl = this;
 		
 		// $ctrl.tasks = data;
@@ -16,6 +16,10 @@
 		$ctrl.refreshTaskList = function() {
 			console.log('refresh');
 			$route.reload();
+		};
+
+		$ctrl.go = function(url) {
+			$location.url(url);
 		};
 	}
 

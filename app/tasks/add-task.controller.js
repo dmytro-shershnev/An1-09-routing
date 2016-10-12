@@ -1,17 +1,21 @@
 (function() {
 
 	angular
-		.module("tasks")
-		.controller("AddTask", AddTask);
+		.module('tasks')
+		.controller('AddTask', AddTask);
 
-	AddTask.$inject = ["usersSrv", "tasksSrv"];
+	AddTask.$inject = ['$location', 'usersSrv', 'tasksSrv'];
 	
-	function AddTask(usersSrv, taskSrv) {
+	function AddTask($location, usersSrv, taskSrv) {
 		var $ctrl = this;
 
 		usersSrv.getData().then(function(data) {
 			$ctrl.users = data;
 		});
+
+		$ctrl.go = function(url) {
+			$location.url(url);
+		};
 	}
 
 })();
